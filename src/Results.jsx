@@ -1,28 +1,28 @@
-import React from 'react'
-import Pet from './Pet'
+import React from "react";
+import Pet from "./Pet";
 
-export default function results({ pets }) {
-
-
+const Results = ({ pets }) => {
   return (
-    <div className='search'>
+    <div className="search">
       {!pets.length ? (
-        <h1>No pets Found</h1>
+        <h1>No Pets Found</h1>
       ) : (
-        pets.map(pet => {
-          return <Pet
-            name={pet.name}
-            animal={pet.animal}
-            breed={pet.breed}
-            images={pet.images}
-            location={`${pet.city}, ${pet.state}`}
-            id={pet.id}
-            key={pet.id} />
+        pets.map((pet) => {
+          return (
+            <Pet
+              animal={pet.animal}
+              key={pet.id}
+              name={pet.name}
+              breed={pet.breed}
+              images={pet.images}
+              location={`${pet.city}, ${pet.state}`}
+              id={pet.id}
+            />
+          );
         })
-      )
-      }
-
-
+      )}
     </div>
-  )
-}
+  );
+};
+
+export default Results;
